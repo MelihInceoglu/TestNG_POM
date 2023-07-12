@@ -35,14 +35,9 @@ public class C01_PagesilkTest {
             String expectedIcerik="Nutella";
             String actualSonucYazisi=amazonPage.sonucYaziElementi.getText();
 
-
         Assert.assertTrue(actualSonucYazisi.contains(expectedIcerik));
 
-
-
-
         //sayfayi kapatin
-
 
         ResuableMethods.bekle(5);
         Driver.closeDriver();

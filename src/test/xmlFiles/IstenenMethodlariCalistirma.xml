@@ -1,0 +1,56 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Istenen Methodlari Calistirma">
+
+    <test name="method calistimra">
+
+        <classes>
+
+            <class name="tests.day13_testNGFramework.C07_QdNegativeLoginTest">
+
+                <methods>
+                    <exclude name="gecersizUsernameGecersizPassword"></exclude>
+                </methods>
+            </class>
+
+            <class name="tests.day12_TestNG.C02_Priority">
+
+                <methods>
+
+                    <include name="youtubeTest">
+
+                    </include>
+
+                </methods>
+
+
+            </class>
+
+        </classes>
+    </test>
+
+    <test name=" Bir de Paket ekleyelim dedik">
+
+        <packages>
+
+            <package name="tests.day12_TestNG"></package>
+
+        </packages>
+
+    </test>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</suite>

@@ -13,16 +13,6 @@ public class C07_QdNegativeLoginTest {
 
     //1- https://www.qualitydemy.com/ anasayfasina gidin
     //2- login linkine basin
-    // 3- 3 farkli test method’u olusturun.
-    // - gecerli username, gecersiz password
-    // - gecersiz username, gecerli password
-    // - gecersiz username, gecersiz password.
-    //4- Login butonuna basarak login olun
-    //5- Basarili olarak giris yapilamadigini test edin
-
-
-    //1- https://www.qualitydemy.com/ anasayfasina gidin
-    //2- login linkine basin
     //3- 3 farkli test method’u olusturun.
     //	- gecerli username, gecersiz password
     //	- gecersiz username, gecerli password
@@ -30,7 +20,7 @@ public class C07_QdNegativeLoginTest {
     //4- Login butonuna basarak login olun
     //5- Basarili olarak giris yapilamadigini test edin
 
-    @Test
+    @Test(groups = "smoke")
     public void gecersizPasswordTesti(){
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
 
@@ -41,9 +31,6 @@ public class C07_QdNegativeLoginTest {
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
 
-        qdPage.cookiesKapama.click();
-        ResuableMethods.bekle(3);
-
         ResuableMethods.bekle(3);
 
         qdPage.loginButonu.click();
@@ -52,6 +39,47 @@ public class C07_QdNegativeLoginTest {
 
         Driver.closeDriver();
     }
+
+    @Test(groups = "smoke")
+    public void gecersizUsernameTesti(){
+        Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+
+        QdPage qdPage = new QdPage();
+
+        qdPage.ilkLoginLinki.click();
+
+        qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
+        qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
+
+        ResuableMethods.bekle(5);
+
+        qdPage.loginButonu.click();
+
+        Assert.assertTrue(qdPage.emailKutusu.isDisplayed());
+
+        Driver.closeDriver();
+    }
+
+    @Test(groups = "smoke")
+    public void gecersizUsernameGecersizPassword(){
+        Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+
+        QdPage qdPage = new QdPage();
+
+        qdPage.ilkLoginLinki.click();
+
+        qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
+        qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
+
+        ResuableMethods.bekle(3);
+        qdPage.loginButonu.click();
+
+        Assert.assertTrue(qdPage.emailKutusu.isDisplayed());
+
+        Driver.closeDriver();
+    }
+
+
 
 
 
