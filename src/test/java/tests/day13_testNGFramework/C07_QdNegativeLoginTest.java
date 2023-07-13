@@ -5,7 +5,8 @@ import org.testng.annotations.Test;
 import pages.QdPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ResuableMethods;
+
+
 
 public class C07_QdNegativeLoginTest {
 
@@ -31,7 +32,7 @@ public class C07_QdNegativeLoginTest {
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
 
-        ResuableMethods.bekle(3);
+
 
         qdPage.loginButonu.click();
 
@@ -51,7 +52,7 @@ public class C07_QdNegativeLoginTest {
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
         qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
 
-        ResuableMethods.bekle(5);
+
 
         qdPage.loginButonu.click();
 
@@ -71,7 +72,7 @@ public class C07_QdNegativeLoginTest {
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
         qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
 
-        ResuableMethods.bekle(3);
+
         qdPage.loginButonu.click();
 
         Assert.assertTrue(qdPage.emailKutusu.isDisplayed());

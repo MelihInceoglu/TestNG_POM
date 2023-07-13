@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AmazonPage;
 import utilities.Driver;
-import utilities.ResuableMethods;
+
 
 public class C01_PagesilkTest {
 
@@ -39,7 +39,7 @@ public class C01_PagesilkTest {
 
         //sayfayi kapatin
 
-        ResuableMethods.bekle(5);
+
         Driver.closeDriver();
 
     }

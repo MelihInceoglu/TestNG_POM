@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.QdPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ResuableMethods;
+
 
 import java.io.ObjectInputFilter;
 
@@ -24,14 +24,14 @@ public class C06_QDLoginTest {
         // 4- Kullanici sifresi olarak valid sifre girin
         qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
         // 5- Login butonuna basarak login olun
-        ResuableMethods.bekle(3);
-        qdPage.cookiesKapama.click();
-        ResuableMethods.bekle(3);
 
-        ResuableMethods.bekle(3);
+        qdPage.cookiesKapama.click();
+
+
+
 
         qdPage.loginButonu.click();
-        ResuableMethods.bekle(2);
+
         // 6- Basarili olarak giris yapilabildigini test edin
 
         Assert.assertTrue(qdPage.basariliGirisKontrolElementi.isDisplayed());

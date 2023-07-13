@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FacebookPage;
 import utilities.Driver;
-import utilities.ResuableMethods;
+
 
 public class C02_FacebookTest {
 
